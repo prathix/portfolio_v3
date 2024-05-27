@@ -1,0 +1,23 @@
+body{
+    display: flex;              /* these 4 lines are for centering the logo */
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: black;
+}
+
+#logo{
+    width: 20vw;   /* these 2 lines are for the size of the logo */
+    height:auto;
+}
+
+.ring {
+    position: absolute;      /* the ring around the logo which has the categories of programming that I do inside */
+    height: 35vw;
+    width: 45vw;
+    background-color: transparent;
+    border-radius: 50%;
+    border: solid 1vw white;
+    opacity:0.3;
+    z-index: 1;
+}
