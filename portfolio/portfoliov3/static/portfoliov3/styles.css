@@ -1,9 +1,11 @@
 body{
+    position: relative;
     display: flex;              /* these 4 lines are for centering the logo */
     align-items: center;
     justify-content: center;
     height: 100vh;
     background-color: black;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 #logo{
@@ -11,13 +13,77 @@ body{
     height:auto;
 }
 
+@keyframes rotate1{
+    from{
+        transform: rotate(0deg)
+    }
+    to{
+        transform: rotate(360deg)
+    }
+}
+
+@keyframes rotate2{
+    from{
+        transform: rotate(360deg)
+    }
+    to{
+        transform: rotate(0deg)
+    }
+}
+
 .ring {
     position: absolute;      /* the ring around the logo which has the categories of programming that I do inside */
-    height: 35vw;
-    width: 45vw;
+    height: 37vw;
+    width: 37vw;
     background-color: transparent;
     border-radius: 50%;
-    border: solid 1vw white;
-    opacity:0.3;
+    border: solid 1vw rgba(255, 255, 255, 0.322);
+    opacity:1;
     z-index: 1;
+
+    animation: rotate1 60s linear infinite;    /* the animation logic */
+}
+
+.category{
+    position: absolute;      /*the logic for making the categories of development be circles*/
+    height: 10vw;
+    width: 10vw;
+    border-radius: 50%;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 1.5vw;
+    opacity: 1 !important;
+    
+    animation: rotate2 60s linear infinite;      /* logic for not making the text rotate too */
+}
+
+#game_dev{    
+    background-color: rgb(138, 46, 46);             /* logic for positioning the initial positions of the categories and coloring them */
+    opacity: 1 !important;
+    bottom: 0vw;
+    right: 0vw;
+}
+
+#ai_dev{
+    background-color: rgb(33, 33, 119);
+    opacity: 1 !important;
+    top: 0vw;
+    right: 0vw;
+}
+
+#web_dev{
+    background-color: rgb(41, 129, 41);
+    opacity: 1 !important;
+    top: 0vw;
+    left: 0vw;
+}
+
+#miscellanous{
+    background-color: rgb(119, 119, 42);
+    opacity: 1 !important;
+    bottom: 0vw;
+    left: 0vw;
 }

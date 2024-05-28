@@ -9,7 +9,15 @@
     <link rel="icon" href="{% static 'portfoliov3/images/logo.png'%}" type="image/x-icon">
 </head>
 <body>
+    <script src="{% static 'portfoliov3/script.js' %}"></script>          <!-- the script of the web app -->
+    
     <img src="{% static 'portfoliov3/images/logo.png'%}" id="logo">     <!-- logo image -->
-    <div class="ring"></div>
+    
+    <div class="ring">    <!-- the ring around the logo adn the categories of programming that I do -->
+        <div class="category" id="game_dev">Game Dev</div>
+        <div class="category" id="ai_dev">AI Dev</div>
+        <div class="category" id="web_dev">Web Dev</div>
+        <div class="category" id="miscellanous">miscellanous</div>
+    </div>
 </body>
 </html>
