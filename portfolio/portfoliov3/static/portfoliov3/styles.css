@@ -13,21 +13,12 @@ body{
     height:auto;
 }
 
-@keyframes rotate1{
+@keyframes rotate{
     from{
         transform: rotate(0deg)
     }
     to{
         transform: rotate(360deg)
-    }
-}
-
-@keyframes rotate2{
-    from{
-        transform: rotate(360deg)
-    }
-    to{
-        transform: rotate(0deg)
     }
 }
 
@@ -41,7 +32,7 @@ body{
     opacity:1;
     z-index: 1;
 
-    animation: rotate1 60s linear infinite;    /* the animation logic */
+    animation: rotate 60s linear infinite;    /* the animation logic */
 }
 
 .category{
@@ -57,7 +48,7 @@ body{
     font-size: 1.5vw;
     opacity: 1 !important;
     
-    animation: rotate2 60s linear infinite;      /* logic for not making the text rotate too */
+    animation: rotate 60s linear infinite reverse;      /* logic for not making the text rotate too */
 }
 
 #game_dev{    
