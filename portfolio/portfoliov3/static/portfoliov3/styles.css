@@ -21,7 +21,6 @@ body{
         transform: rotate(360deg)
     }
 }
-
 .ring {
     position: absolute;      /* the ring around the logo which has the categories of programming that I do inside */
     height: 37vw;
@@ -49,6 +48,10 @@ body{
     opacity: 1 !important;
     
     animation: rotate 60s linear infinite reverse;      /* logic for not making the text rotate too */
+}
+
+.accelerated {                        /* class for making the animation accelerate when clicked */
+    animation: rotate 0.5s linear infinite !important;
 }
 
 #game_dev{    
