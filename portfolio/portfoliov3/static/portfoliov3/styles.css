@@ -1,3 +1,7 @@
+:root{                                             /* variables */
+    --animation-duration: 60s;
+}
+
 body{
     position: relative;
     display: flex;              /* these 4 lines are for centering the logo */
@@ -30,8 +34,7 @@ body{
     border: solid 1vw rgba(255, 255, 255, 0.322);
     opacity:1;
     z-index: 1;
-
-    animation: rotate 60s linear infinite;    /* the animation logic */
+    animation: rotate var(--animation-duration) linear infinite;    /* the animation logic */
 }
 
 .category{
@@ -47,11 +50,7 @@ body{
     font-size: 1.5vw;
     opacity: 1 !important;
     
-    animation: rotate 60s linear infinite reverse;      /* logic for not making the text rotate too */
-}
-
-.accelerated {                        /* class for making the animation accelerate when clicked */
-    animation: rotate 0.5s linear infinite !important;
+    animation: rotate var(--animation-duration) linear infinite reverse;      /* logic for not making the text rotate too */
 }
 
 #game_dev{    

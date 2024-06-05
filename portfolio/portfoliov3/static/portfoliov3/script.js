@@ -1,8 +1,9 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function() {                      /* function for hiding everything when the user clicks them */
     document.querySelectorAll(".category").forEach(function(category) {
         category.addEventListener("click", function() {
             let ring = document.querySelector(".ring");
             let logo = document.querySelector("#logo");
+            changeSpeed();
             setTimeout(function() {
                 ring.style.visibility = "hidden";
                 logo.style.visibility = "hidden";
@@ -10,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
-    function clicked(categ) {
+    function clicked(categ) {                                                 /* function for changing the pages css when clicked */
         let element = document.querySelector(categ);
         if (element) {
             element.addEventListener("click", function() {
@@ -34,16 +35,20 @@ document.addEventListener("DOMContentLoaded", function() {
     clicked("#ai_dev");
     clicked("#web_dev");
     clicked("#miscellaneous");
+
+    function changeSpeed() {                                      /* function for changing the duration of the rotation */
+        let duration = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--animation-duration'));
+        
+        function decreaseDuration() {
+            setTimeout( function() {
+                if (duration > 0.5) {
+                        duration -= 0.1;
+                        document.documentElement.style.setProperty('--animation-duration', `${duration}s`);
+                        requestAnimationFrame(decreaseDuration);
+                        decreaseDuration();
+                    }
+            }, 50)
+        }
+        decreaseDuration();
+    }
 });
-
-window.onload = function() {
-    document.querySelector(".ring").addEventListener("click", function() {
-        this.classList.add("accelerated");
-    });
-
-    document.querySelectorAll(".category").forEach(function(category) {
-        category.addEventListener("click", function() {
-            this.classList.add("accelerated");
-        });
-    });
-};
