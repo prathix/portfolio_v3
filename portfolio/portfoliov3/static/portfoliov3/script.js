@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function() {                      
             let ring = document.querySelector(".ring");
             let logo = document.querySelector("#logo");
             changeSpeed();
+            document.querySelector("#logo").style.Playstate = 'running';
             setTimeout(function() {
                 ring.style.visibility = "hidden";
                 logo.style.visibility = "hidden";
