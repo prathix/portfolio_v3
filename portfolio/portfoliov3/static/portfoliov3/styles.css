@@ -50,6 +50,9 @@ body{
     animation: rotate var(--animation-duration) linear infinite;    /* the animation logic */
 }
 
+.big-ring{
+    visibility: hidden;
+}
 .category{
     position: absolute;      /*the logic for making the categories of development be circles*/
     height: 10vw;

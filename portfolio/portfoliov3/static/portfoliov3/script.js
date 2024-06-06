@@ -4,10 +4,12 @@ document.addEventListener("DOMContentLoaded", function() {                      
             let ring = document.querySelector(".ring");
             let logo = document.querySelector("#logo");
             changeSpeed();
-            document.querySelector("#logo").style.Playstate = 'running';
+            document.querySelector("#logo").style.animation.Playstate = 'running';
             setTimeout(function() {
                 ring.style.visibility = "hidden";
                 logo.style.visibility = "hidden";
+                document.querySelector(".ring").style.visbility = none;
+                document.querySelector(".big-ring").style.visbility = visible;
             }, 5000);
         });
     });
