@@ -1,6 +1,6 @@
 /* animations */
 
-keyframes rotate{                       /* animation to make the ring and text rotate */
+@keyframes rotate{                       /* animation to make the ring and text rotate */
     from{
         transform: rotate(0deg)
     }
