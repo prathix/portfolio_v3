@@ -1,3 +1,25 @@
+/* animations */
+
+keyframes rotate{                       /* animation to make the ring and text rotate */
+    from{
+        transform: rotate(0deg)
+    }
+    to{
+        transform: rotate(360deg)
+    }
+}
+
+@keyframes increase_size{              /* animation to increase the size of the logo and of the ring */
+    from{
+        transform:scaleX(1);
+        transform:scaleY(1);
+    }
+    to{
+        transform:scaleX(3);
+        transform:scaleY(3);
+    }
+}
+
 :root{                                             /* variables */
     --animation-duration: 60s;
 }
@@ -15,16 +37,9 @@ body{
 #logo{
     width: 20vw;   /* these 2 lines are for the size of the logo */
     height:auto;
+    animation: increase_size 2s linear forwards;
 }
 
-@keyframes rotate{
-    from{
-        transform: rotate(0deg)
-    }
-    to{
-        transform: rotate(360deg)
-    }
-}
 .ring {
     position: absolute;      /* the ring around the logo which has the categories of programming that I do inside */
     height: 37vw;
@@ -34,7 +49,7 @@ body{
     border: solid 1vw rgba(255, 255, 255, 0.322);
     opacity:1;
     z-index: 1;
-    animation: rotate var(--animation-duration) linear infinite;    /* the animation logic */
+    animation: rotate var(--animation-duration) linear infinite, increase_size 2s linear forwards;    /* the animation logic */
 }
 
 .category{

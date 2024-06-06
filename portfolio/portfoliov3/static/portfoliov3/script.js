@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function() {                      
             setTimeout(function() {
                 ring.style.visibility = "hidden";
                 logo.style.visibility = "hidden";
-            }, 2000);
+            }, 5000);
         });
     });
 
@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function() {                      
                     } else if (categ === "#miscellaneous") {
                         body.style.backgroundColor = "brown";
                     }
-                }, 2000);
+                }, 5000);
             });
         }
     }
@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function() {                      
         function decreaseDuration() {
             setTimeout( function() {
                 if (duration > 0.5) {
-                        duration -= 0.1;
+                        duration -= 0.0001;
                         document.documentElement.style.setProperty('--animation-duration', `${duration}s`);
                         requestAnimationFrame(decreaseDuration);
                         decreaseDuration();
