@@ -51,6 +51,14 @@ body{
 }
 
 .big-ring{
+    position: absolute;      /* the ring that appears when you click on something */
+    height: 90vw;
+    width: 90vw;
+    background-color: transparent;
+    border-radius: 50%;
+    border: solid 1vw rgba(255, 255, 255, 0.322);
+    opacity:1;
+    z-index: 1;
     visibility: hidden;
 }
 .category{
