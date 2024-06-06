@@ -11,12 +11,10 @@ keyframes rotate{                       /* animation to make the ring and text r
 
 @keyframes increase_size{              /* animation to increase the size of the logo and of the ring */
     from{
-        transform:scaleX(1);
-        transform:scaleY(1);
+        transform:scale(3)
     }
     to{
-        transform:scaleX(3);
-        transform:scaleY(3);
+        transform:scale(3)
     }
 }
 
