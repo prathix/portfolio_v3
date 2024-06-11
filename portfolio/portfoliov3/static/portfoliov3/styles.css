@@ -9,9 +9,18 @@
     }
 }
 
+@keyframes rotate1{                       /* animation to make the ring and text rotate */
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+
 @keyframes increase_size{              /* animation to increase the size of the logo and of the ring */
     from{
-        transform:scale(3);
+        transform:scale(1);
     }
     to{
         transform:scale(3);
@@ -47,7 +56,19 @@ body{
     border: solid 1vw rgba(255, 255, 255, 0.322);
     opacity:1;
     z-index: 1;
-    animation: rotate var(--animation-duration) linear infinite;    /* the animation logic */
+    animation: rotate 60s linear infinite;    /* the animation logic */
+}
+
+.bigger {
+    position: absolute;      /* class for making the ring bigger when clicked */
+    height: 37vw;
+    width: 37vw;
+    background-color: transparent;
+    border-radius: 50%;
+    border: solid 1vw rgba(255, 255, 255, 0.322);
+    opacity:1;
+    z-index: 1;
+    animation: increase_size 2s linear forwards;
 }
 
 .big-ring{
@@ -74,7 +95,7 @@ body{
     font-size: 1.5vw;
     opacity: 1 !important;
     
-    animation: rotate var(--animation-duration) linear infinite reverse;      /* logic for not making the text rotate too */
+    animation: rotate1 var(--animation-duration) linear infinite reverse;      /* logic for not making the text rotate too */
 }
 
 #game_dev{    
