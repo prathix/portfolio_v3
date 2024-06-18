@@ -27,6 +27,21 @@
     }
 }
 
+@keyframes shift {               /* animation to move the logo from the center to the left */
+    from {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transform: translateX(0); /* Start from center */
+    }
+    to {
+      display: flex;
+      align-items: left;
+      justify-content: left;
+      transform: translateX(-50%); /* Move to left by 50% of its width */
+    }
+  }  
+
 :root{                                             /* variables */
     --animation-duration: 60s;
 }
@@ -45,6 +60,10 @@ body{
     width: 20vw;   /* these 2 lines are for the size of the logo */
     height:auto;
     animation: increase_size 2s linear forwards;
+}
+
+.logo_animation{
+    animation: shift 2s linear forwards;
 }
 
 .ring {
@@ -69,18 +88,6 @@ body{
     opacity:1;
     z-index: 1;
     animation: increase_size 2s linear forwards;
-}
-
-.big-ring{
-    position: absolute;      /* the ring that appears when you click on something */
-    height: 90vw;
-    width: 90vw;
-    background-color: transparent;
-    border-radius: 50%;
-    border: solid 1vw rgba(255, 255, 255, 0.322);
-    opacity:1;
-    z-index: 1;
-    visibility: hidden;
 }
 .category{
     position: absolute;      /*the logic for making the categories of development be circles*/
