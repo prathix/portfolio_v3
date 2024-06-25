@@ -21,9 +21,11 @@
 @keyframes increase_size{              /* animation to increase the size of the logo and of the ring */
     from{
         transform:scale(1);
+        opacity: 1;
     }
     to{
-        transform:scale(3);
+        transform:scale(6);
+        opacity: 0;
     }
 }
 
