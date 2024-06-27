@@ -1,6 +1,8 @@
 document.addEventListener("DOMContentLoaded", function() {     /* main function for starting the various animations */
-    let logo = document.querySelector("#logo");
+    let logo = document.querySelector("#logo");                /* declearing the parts of the html, so that I don't have to redeclare them */
     let ring = document.querySelector(".ring");
+    let project = document.querySelector(".project");
+    project.style.visibility = 'hidden';
     logo.style.animationPlayState = 'paused';                  
     document.querySelectorAll(".category").forEach(function(category) {
         category.addEventListener("click", function() {
@@ -15,13 +17,13 @@ document.addEventListener("DOMContentLoaded", function() {     /* main function 
                 setTimeout(function() {
                     let body = document.querySelector("body");
                     if (categ === "#game_dev") {
-                        body.style.backgroundColor = "white";
+                        project.style.visibility = 'visible';
                     } else if (categ === "#ai_dev") {
-                        body.style.backgroundColor = "blue";
+                        project.style.visibility = 'visible';
                     } else if (categ === "#web_dev") {
-                        body.style.backgroundColor = "red";
+                        project.style.visibility = 'visible';
                     } else if (categ === "#miscellaneous") {
-                        body.style.backgroundColor = "brown";
+                        project.style.visibility = 'visible';
                     }
                 }, 2000);
             });
