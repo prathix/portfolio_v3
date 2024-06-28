@@ -134,3 +134,26 @@ body{
     bottom: 0vw;
     left: 0vw;
 }
+@media(orientation = landscape){
+    .project{
+        position: absolute;
+        display: flex;
+        align-items: center;
+        left: 10vw;
+        margin-right: 10vw;
+        width: 25vw;
+        height: 75vh;
+        background-color: #7D3333;
+        border-radius: 3vw;
+        object-fit: cover;
+        display: block;
+    }
+
+    .project img{
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        height: 40vh;
+        width: 100%;
+    }
+}

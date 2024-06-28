@@ -11,9 +11,9 @@
 <body>
     {% block body %}
     <div class="project">
-        <img id ="project_image">
-        <h3></h3>
-        <p></p>
+        <img src="{{ projects.image }}" id ="project_image">
+        <h3>{{projects.title}}</h3>
+        <p>{{projects.short_description}}</p>
     </div>
     {% endblock %}
 </body>
