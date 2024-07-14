@@ -1,8 +1,10 @@
 document.addEventListener("DOMContentLoaded", function() {     /* main function for starting the various animations */
     let logo = document.querySelector("#logo");                /* declearing the parts of the html, so that I don't have to redeclare them */
     let ring = document.querySelector(".ring");
-    let project = document.querySelector(".project");
-    project.style.visibility = 'hidden';
+    let project = document.querySelectorAll('.project');
+    project.forEach(function(project) {
+        project.style.visibility = 'hidden';
+    });
     logo.style.animationPlayState = 'paused';                  
     document.querySelectorAll(".category").forEach(function(category) {
         category.addEventListener("click", function() {
@@ -15,15 +17,26 @@ document.addEventListener("DOMContentLoaded", function() {     /* main function 
         if (element) {
             element.addEventListener("click", function() {
                 setTimeout(function() {
-                    let body = document.querySelector("body");
                     if (categ === "#game_dev") {
-                        project.style.visibility = 'visible';
+                        project.forEach(function(project) {
+                            project.style.visibility = 'visible';
+                        });
+                        distance();
                     } else if (categ === "#ai_dev") {
-                        project.style.visibility = 'visible';
+                        project.forEach(function(project) {
+                            project.style.visibility = 'visible';
+                        });
+                        distance();
                     } else if (categ === "#web_dev") {
-                        project.style.visibility = 'visible';
+                        project.forEach(function(project) {
+                            project.style.visibility = 'visible';
+                        });
+                        distance();
                     } else if (categ === "#miscellaneous") {
-                        project.style.visibility = 'visible';
+                        project.forEach(function(project) {
+                            project.style.visibility = 'visible';
+                        });
+                        distance();
                     }
                 }, 2000);
             });
@@ -49,4 +62,21 @@ document.addEventListener("DOMContentLoaded", function() {     /* main function 
                 }
         }
     }
+    function distance() {
+        let margin = 100; // Desired margin between the projects
+    
+        // Ensure all projects have absolute positioning
+        project.forEach((currentProject, index) => {
+            currentProject.style.position = 'absolute';
+            if (index > 0) {
+                let previousProject = project[index - 1];
+                // Position the current project based on the previous project plus the margin
+                currentProject.style.left = (previousProject.offsetLeft + previousProject.offsetWidth + margin) + 'px';
+            } else {
+                // Position the first project at the start
+                currentProject.style.left = '0px';
+            }
+        });
+    }
+    
 });

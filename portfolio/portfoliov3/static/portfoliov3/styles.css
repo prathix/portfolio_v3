@@ -139,6 +139,7 @@ body{
         position: absolute;
         display: flex;
         align-items: center;
+        top: 10%;
         left: 10vw;
         margin-right: 10vw;
         width: 25vw;
@@ -153,6 +154,8 @@ body{
         display: flex;
         align-items: flex-start;
         flex-direction: column;
+        border-top-left-radius: 3vw;
+        border-top-right-radius: 3vw;
         height: 40vh;
         width: 100%;
     }
