@@ -139,6 +139,7 @@ body{
         position: absolute;
         display: flex;
         align-items: center;
+        text-align: center;
         top: 10%;
         left: 10vw;
         margin-right: 10vw;
@@ -147,7 +148,7 @@ body{
         background-color: #7D3333;
         border-radius: 3vw;
         object-fit: cover;
-        display: block;
+        display: inline-block;
     }
 
     .project img{
@@ -165,9 +166,12 @@ body{
         flex-wrap: wrap;
         gap: 16px;
         padding: 10px;
+        overflow-x: auto;
+        white-space: nowrap;
     }
     
     .project h3, .project p {
         margin: 8px 0;
+        font-weight:lighter;
     }
 }

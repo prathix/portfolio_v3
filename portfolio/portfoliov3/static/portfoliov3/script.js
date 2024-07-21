@@ -2,6 +2,10 @@ document.addEventListener("DOMContentLoaded", function() {     /* main function 
     let logo = document.querySelector("#logo");                /* declearing the parts of the html, so that I don't have to redeclare them */
     let ring = document.querySelector(".ring");
     let project = document.querySelectorAll('.project');
+    let ai = document.querySelectorAll('.project.ai');
+    let game = document.querySelectorAll('.project.game');
+    let web = document.querySelectorAll('.project.web');
+    let miscellaneous  = document.querySelectorAll('.project.miscellaneous');
     project.forEach(function(project) {
         project.style.visibility = 'hidden';
     });
@@ -18,25 +22,25 @@ document.addEventListener("DOMContentLoaded", function() {     /* main function 
             element.addEventListener("click", function() {
                 setTimeout(function() {
                     if (categ === "#game_dev") {
-                        project.forEach(function(project) {
-                            project.style.visibility = 'visible';
+                        game.forEach(function(game) {
+                            game.style.visibility = 'visible';
                         });
-                        distance();
+                        distance(game);
                     } else if (categ === "#ai_dev") {
-                        project.forEach(function(project) {
-                            project.style.visibility = 'visible';
+                        ai.forEach(function(ai) {
+                            ai.style.visibility = 'visible';
                         });
-                        distance();
+                        distance(ai);
                     } else if (categ === "#web_dev") {
-                        project.forEach(function(project) {
-                            project.style.visibility = 'visible';
+                        web.forEach(function(web) {
+                            web.style.visibility = 'visible';
                         });
-                        distance();
+                        distance(web);
                     } else if (categ === "#miscellaneous") {
-                        project.forEach(function(project) {
-                            project.style.visibility = 'visible';
+                        miscellaneous.forEach(function(miscellaneous) {
+                            miscellaneous.style.visibility = 'visible';
                         });
-                        distance();
+                        distance(miscellaneous);
                     }
                 }, 2000);
             });
@@ -62,7 +66,7 @@ document.addEventListener("DOMContentLoaded", function() {     /* main function 
                 }
         }
     }
-    function distance() {
+    function distance(project) {
         let margin = 100; // Desired margin between the projects
     
         // Ensure all projects have absolute positioning

@@ -12,11 +12,34 @@
     {% block body %}
     <div class="projects-container">
         {% for item in items %}
-            <div class="project">
-                <img src="{{ item.image.url }}" id ="project_image">
-                <h3>{{item.title}}</h3>
-                <p>{{item.short_description}}</p>
-            </div>
+            {% if item.category == "ai" %}
+                <div class="project ai">
+                    <img src="{{ item.image.url }}" id ="project_image">
+                    <h2>{{item.title}}</h2>
+                    <p>{{item.short_description}}</p>
+                </div>
+            {%endif%}
+            {% if item.category == "game" %}
+                <div class="project game">
+                    <img src="{{ item.image.url }}" id ="project_image">
+                    <h2>{{item.title}}</h2>
+                    <p>{{item.short_description}}</p>
+                </div>
+            {%endif%}
+            {% if item.category == "web" %}
+                <div class="project web">
+                    <img src="{{ item.image.url }}" id ="project_image">
+                    <h2>{{item.title}}</h2>
+                    <p>{{item.short_description}}</p>
+                </div>
+            {%endif%}
+            {% if item.category == "miscellaneous" %}
+                <div class="project miscellaneous">
+                    <img src="{{ item.image.url }}" id ="project_image">
+                    <h2>{{item.title}}</h2>
+                    <p>{{item.short_description}}</p>
+                </div>
+            {%endif%}
         {% endfor %}
     </div>
     {% endblock %}
