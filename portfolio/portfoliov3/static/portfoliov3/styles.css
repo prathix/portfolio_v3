@@ -55,7 +55,7 @@ body{
     justify-content: center;
     height: 100vh;
     background-color: black;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family:Arial, Helvetica, sans-serif;
 }
 
 #logo{
@@ -149,6 +149,7 @@ body{
         border-radius: 3vw;
         object-fit: cover;
         display: inline-block;
+        color: white;
     }
 
     .project img{
@@ -167,11 +168,17 @@ body{
         gap: 16px;
         padding: 10px;
         overflow-x: auto;
-        white-space: nowrap;
     }
-    
-    .project h3, .project p {
-        margin: 8px 0;
-        font-weight:lighter;
+    .project_p, h1{
+        margin-top: 2vw;
+        position: relative;
+        font-size: x-large;
+        z-index: 2;
+        max-width: 100%;
+    }
+
+    .project h1{
+        font-size: 2vw;
+        font-weight: lighter;
     }
 }
