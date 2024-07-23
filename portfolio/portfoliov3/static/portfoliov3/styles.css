@@ -29,20 +29,6 @@
     }
 }
 
-@keyframes shift {               /* animation to move the logo from the center to the left */
-    from {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transform: translateX(0); /* Start from center */
-    }
-    to {
-      display: flex;
-      align-items: left;
-      justify-content: left;
-      transform: translateX(-50%); /* Move to left by 50% of its width */
-    }
-  }  
 
 :root{                                             /* variables */
     --animation-duration: 60s;
@@ -64,10 +50,11 @@ body{
     animation: increase_size 2s linear forwards;
 }
 
-.logo_animation{
-    animation: shift 2s linear forwards;
+.smaller_logo{
+    width: 20vw;   /* code for making the code smaller when the return button is clicked */
+    height:auto;
+    animation: increase_size 2s linear reverse;
 }
-
 .ring {
     position: absolute;      /* the ring around the logo which has the categories of programming that I do inside */
     height: 37vw;
@@ -91,6 +78,18 @@ body{
     z-index: 1;
     animation: increase_size 2s linear forwards;
 }
+
+.smaller {
+    position: absolute;      /* class for making the ring smaller when clicked */
+    height: 37vw;
+    width: 37vw;
+    background-color: transparent;
+    border-radius: 50%;
+    border: solid 1vw rgba(255, 255, 255, 0.322);
+    opacity:1;
+    z-index: 1;
+    animation: increase_size 2s linear reverse;
+}
 .category{
     position: absolute;      /*the logic for making the categories of development be circles*/
     height: 10vw;
@@ -107,6 +106,23 @@ body{
     animation: rotate1 var(--animation-duration) linear infinite reverse;      /* logic for not making the text rotate too */
 }
 
+.slower {
+    .category{
+        position: absolute;      /* class for the category when the return button is clicked */
+        height: 10vw;
+        width: 10vw;
+        border-radius: 50%;
+        z-index: 2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-size: 1.5vw;
+        opacity: 1 !important;
+        
+        animation: rotate1 60s linear infinite reverse;
+    }
+}
 #game_dev{    
     background-color: rgb(138, 46, 46);             /* logic for positioning the initial positions of the categories and coloring them */
     opacity: 1 !important;
@@ -134,51 +150,63 @@ body{
     bottom: 0vw;
     left: 0vw;
 }
-@media(orientation = landscape){
-    .project{
-        position: absolute;
-        display: flex;
-        align-items: center;
-        text-align: center;
-        top: 10%;
-        left: 10vw;
-        margin-right: 10vw;
-        width: 25vw;
-        height: 75vh;
-        background-color: #7D3333;
-        border-radius: 3vw;
-        object-fit: cover;
-        display: inline-block;
-        color: white;
-    }
+.project{                                     /* project div style */
+    position: absolute;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    top: 10%;
+    left: 10vw;
+    margin-right: 10vw;
+    width: 25vw;
+    height: 75vh;
+    background-color: #7D3333;
+    border-radius: 3vw;
+    object-fit: cover;
+    display: inline-block;
+    color: white;
+    animation: increase_size 2s linear forwards
+}
 
-    .project img{
-        display: flex;
-        align-items: flex-start;
-        flex-direction: column;
-        border-top-left-radius: 3vw;
-        border-top-right-radius: 3vw;
-        height: 40vh;
-        width: 100%;
-    }
+.project img{                            /* code to make the image fit in the project div */
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    border-top-left-radius: 3vw;
+    border-top-right-radius: 3vw;
+    height: 40vh;
+    width: 100%;
+}
 
-    .projects-container {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 16px;
-        padding: 10px;
-        overflow-x: auto;
-    }
-    .project_p, h1{
-        margin-top: 2vw;
-        position: relative;
-        font-size: x-large;
-        z-index: 2;
-        max-width: 100%;
-    }
+.projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding: 10px;
+    overflow-x: auto;
+}
+.project_p, h1{                           /* code specific to the text to make it look better */
+    margin-top: 2vw;
+    position: relative;
+    font-size: x-large;
+    z-index: 2;
+    max-width: 100%;
+}
 
-    .project h1{
-        font-size: 2vw;
-        font-weight: lighter;
-    }
+.project h1{
+    font-size: 2vw;
+    font-weight: lighter;
+}
+
+#return{
+    position: absolute;
+    text-decoration: none;
+    top: 5vh;
+    right: 5vh;
+    color: #919191;
+    z-index: 3;
+}
+
+#return:hover{
+    color: #818181;
 }

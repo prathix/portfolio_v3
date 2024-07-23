@@ -1,21 +1,24 @@
 document.addEventListener("DOMContentLoaded", function() {     /* main function for starting the various animations */
-    let logo = document.querySelector("#logo");                /* declearing the parts of the html, so that I don't have to redeclare them */
+    let logo = document.querySelector(".logo");                /* declearing the parts of the html, so that I don't have to redeclare them */
+    let return_link = document.querySelector("#return");
     let ring = document.querySelector(".ring");
     let project = document.querySelectorAll('.project');
     let ai = document.querySelectorAll('.project.ai');
     let game = document.querySelectorAll('.project.game');
     let web = document.querySelectorAll('.project.web');
     let miscellaneous  = document.querySelectorAll('.project.miscellaneous');
+    let category = document.querySelectorAll('.category');
     project.forEach(function(project) {
         project.style.visibility = 'hidden';
+        project.style.animationPlayState = 'paused';
     });
-    logo.style.animationPlayState = 'paused';                  
+    return_link.style.visibility = 'hidden';
+    logo.style.animationPlayState = 'paused';              
     document.querySelectorAll(".category").forEach(function(category) {
         category.addEventListener("click", function() {
             changeSpeed();
         });
     });
-
     function clicked(categ) {                                                 /* function for changing the pages css when clicked */
         let element = document.querySelector(categ);
         if (element) {
@@ -23,21 +26,25 @@ document.addEventListener("DOMContentLoaded", function() {     /* main function 
                 setTimeout(function() {
                     if (categ === "#game_dev") {
                         game.forEach(function(game) {
+                            return_link.style.visibility = 'visible';
                             game.style.visibility = 'visible';
                         });
                         distance(game);
                     } else if (categ === "#ai_dev") {
                         ai.forEach(function(ai) {
+                            return_link.style.visibility = 'visible';
                             ai.style.visibility = 'visible';
                         });
                         distance(ai);
                     } else if (categ === "#web_dev") {
                         web.forEach(function(web) {
+                            return_link.style.visibility = 'visible';
                             web.style.visibility = 'visible';
                         });
                         distance(web);
                     } else if (categ === "#miscellaneous") {
                         miscellaneous.forEach(function(miscellaneous) {
+                            return_link.style.visibility = 'visible';
                             miscellaneous.style.visibility = 'visible';
                         });
                         distance(miscellaneous);
@@ -51,7 +58,17 @@ document.addEventListener("DOMContentLoaded", function() {     /* main function 
     clicked("#ai_dev");
     clicked("#web_dev");
     clicked("#miscellaneous");
-
+    return_link.addEventListener("click", function(){
+        project.forEach(function(project) {
+            project.style.animationPlayState = 'running';
+        });
+        setTimeout(function(){
+            ring.classList.toggle('smaller');
+            logo.classList.toggle('smaller_logo');
+            logo.style.visibility = 'visible';
+            category.classList.toggle('slower');
+        }, 2000)
+    })
     function changeSpeed() {                                      /* function for changing the duration of the rotation */
         let duration = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--animation-duration'));
         decreaseDuration();
@@ -64,6 +81,9 @@ document.addEventListener("DOMContentLoaded", function() {     /* main function 
                     ring.classList.toggle('bigger');
                     decreaseDuration();
                 }
+            else{
+                return 0;
+            }
         }
     }
     function distance(project) {
