@@ -44,7 +44,7 @@ body{
     font-family:Arial, Helvetica, sans-serif;
 }
 
-#logo{
+.logo{
     width: 20vw;   /* these 2 lines are for the size of the logo */
     height:auto;
     animation: increase_size 2s linear forwards;
@@ -88,7 +88,7 @@ body{
     border: solid 1vw rgba(255, 255, 255, 0.322);
     opacity:1;
     z-index: 1;
-    animation: increase_size 2s linear reverse;
+    animation: rotate 60s linear infinite;
 }
 .category{
     position: absolute;      /*the logic for making the categories of development be circles*/
@@ -103,25 +103,23 @@ body{
     font-size: 1.5vw;
     opacity: 1 !important;
     
-    animation: rotate1 var(--animation-duration) linear infinite reverse;      /* logic for not making the text rotate too */
+    animation: rotate var(--animation-duration) linear infinite reverse;      /* logic for not making the text rotate too */
 }
 
 .slower {
-    .category{
-        position: absolute;      /* class for the category when the return button is clicked */
-        height: 10vw;
-        width: 10vw;
-        border-radius: 50%;
-        z-index: 2;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: white;
-        font-size: 1.5vw;
-        opacity: 1 !important;
+    position: absolute;      /* class for the category when the return button is clicked */
+    height: 10vw;
+    width: 10vw;
+    border-radius: 50%;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 1.5vw;
+    opacity: 1 !important;
         
-        animation: rotate1 60s linear infinite reverse;
-    }
+    animation: rotate1 60s linear infinite reverse;
 }
 #game_dev{    
     background-color: rgb(138, 46, 46);             /* logic for positioning the initial positions of the categories and coloring them */

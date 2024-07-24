@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", function() {     /* main function 
     let web = document.querySelectorAll('.project.web');
     let miscellaneous  = document.querySelectorAll('.project.miscellaneous');
     let category = document.querySelectorAll('.category');
+    let duration = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--animation-duration'));
     project.forEach(function(project) {
         project.style.visibility = 'hidden';
         project.style.animationPlayState = 'paused';
@@ -65,26 +66,33 @@ document.addEventListener("DOMContentLoaded", function() {     /* main function 
         setTimeout(function(){
             ring.classList.toggle('smaller');
             logo.classList.toggle('smaller_logo');
-            logo.style.visibility = 'visible';
-            category.classList.toggle('slower');
+            category.forEach(function(category) {
+                category.classList.toggle('slower');
+            });
         }, 2000)
+        return_link.style.visibility = 'hidden';
+        document.querySelectorAll(".category slower").forEach(function(category) {
+            category.addEventListener("click", function() {
+                changeSpeed();
+            });
+        clicked("#game_dev");
+        clicked("#ai_dev");
+        clicked("#web_dev");
+        clicked("#miscellaneous");
+        });
     })
     function changeSpeed() {                                      /* function for changing the duration of the rotation */
-        let duration = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--animation-duration'));
-        decreaseDuration();
         function decreaseDuration() {
-            if (duration > 0.5) {
-                    duration -= 0.001;
+            while (duration > 1){
+                duration -= 0.001;
                     document.documentElement.style.setProperty('--animation-duration', `${duration}s`);
                     requestAnimationFrame(decreaseDuration);
                     logo.style.animationPlayState = 'running'; 
                     ring.classList.toggle('bigger');
-                    decreaseDuration();
-                }
-            else{
-                return 0;
             }
         }
+        decreaseDuration();
+        return 0;
     }
     function distance(project) {
         let margin = 100; // Desired margin between the projects
