@@ -60,28 +60,10 @@ document.addEventListener("DOMContentLoaded", function() {     /* main function 
     clicked("#web_dev");
     clicked("#miscellaneous");
     return_link.addEventListener("click", function(){
-        project.forEach(function(project) {
-            project.style.animationPlayState = 'running';
-        });
-        setTimeout(function(){
-            ring.classList.toggle('smaller');
-            logo.classList.toggle('smaller_logo');
-            category.forEach(function(category) {
-                category.classList.toggle('slower');
-            });
-        }, 2000)
-        return_link.style.visibility = 'hidden';
-        document.querySelectorAll(".category slower").forEach(function(category) {
-            category.addEventListener("click", function() {
-                changeSpeed();
-            });
-        clicked("#game_dev");
-        clicked("#ai_dev");
-        clicked("#web_dev");
-        clicked("#miscellaneous");
-        });
-    })
-    function changeSpeed() {                                      /* function for changing the duration of the rotation */
+        location.reload()
+            return_link.style.visibility = 'hidden';
+    });
+function changeSpeed() {                                      /* function for changing the duration of the rotation */
         function decreaseDuration() {
             while (duration > 1){
                 duration -= 0.001;
