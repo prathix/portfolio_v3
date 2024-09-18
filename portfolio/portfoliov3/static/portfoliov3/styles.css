@@ -208,3 +208,16 @@ body{
 #return:hover{
     color: #818181;
 }
+
+.project_link{
+    width: 7vw;
+    height: 4vw;
+    background-color: rgb(105, 0, 0);
+    color: white;
+    border-radius: 3vh;
+    font-size: 1vw;
+    text-decoration: none;
+    box-shadow: none;
+    border: none;
+    z-index: 5;
+}
