@@ -17,8 +17,7 @@
                     <img src="{{ item.image.url }}" id ="project_image">
                     <h1>{{item.title}}</h1>
                     <p class = "project_p">{{item.short_description}}</p>
-                    <button class="project_link" onclick="window.location.href='{{ item.link|escapejs }}';">See more</button>
-
+                    <button class="project_link" onclick="window.location.href = '{{item.link}}'">See more</button>
                 </div>
             {%endif%}
             {% if item.category == "game" %}
@@ -26,8 +25,7 @@
                     <img src="{{ item.image.url }}" id ="project_image">
                     <h1>{{item.title}}</h1>
                     <p class = "project_p">{{item.short_description}}</p>
-                    <button class="project_link" onclick="window.location.href='{{ item.link|escapejs }}';">See more</button>
-
+                    <button class="project_link" onclick="window.location.href = '{{item.link}}'">See more</button>
                 </div>
             {%endif%}
             {% if item.category == "web" %}
@@ -35,8 +33,7 @@
                     <img src="{{ item.image.url }}" id ="project_image">
                     <h1>{{item.title}}</h1>
                     <p class = "project_p">{{item.short_description}}</p>
-                    <button class="project_link" onclick="window.location.href='{{ item.link|escapejs }}';">See more</button>
-
+                    <button class="project_link" onclick="window.location.href = '{{item.link}}'">See more</button>
                 </div>
             {%endif%}
             {% if item.category == "miscellaneous" %}
@@ -44,8 +41,7 @@
                     <img src="{{ item.image.url }}" id ="project_image">
                     <h1>{{item.title}}</h1>
                     <p class = "project_p">{{item.short_description}}</p>
-                    <button class="project_link" onclick="window.location.href='{{ item.link|escapejs }}';">See more</button>
-
+                    <button class="project_link" onclick="window.location.href = '{{item.link}}'">See more</button>
                 </div>
             {%endif%}
         {% endfor %}

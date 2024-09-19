@@ -163,6 +163,8 @@ body{
     object-fit: cover;
     display: inline-block;
     color: white;
+    pointer-events: all !important;
+    z-index: 4;
     animation: increase_size 2s linear forwards
 }
 
@@ -219,5 +221,6 @@ body{
     text-decoration: none;
     box-shadow: none;
     border: none;
-    z-index: 5;
+    z-index: 5 !important;
+    pointer-events: all !important;
 }

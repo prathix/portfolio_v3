@@ -20,6 +20,9 @@ document.addEventListener("DOMContentLoaded", function() {     /* main function 
             changeSpeed();
         });
     });
+    function redirectToLink(url) {
+        window.location.href = url;
+    }
     function clicked(categ) {                                                 /* function for changing the pages css when clicked */
         let element = document.querySelector(categ);
         if (element) {
