@@ -244,9 +244,10 @@ body{
     }
 
     .project{
-        margin-left: 12.5vw;
+        margin-right: 12.5vw;
         width: 75vw;
         height: 75vh;
+        border-radius: 3vh;
     }
 
     .project_link{

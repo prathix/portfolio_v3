@@ -77,20 +77,38 @@ function changeSpeed() {                                      /* function for ch
         return 0;
     }
     function distance(project) {
+        if (window.screen.orientation.type.includes('landscape')){
         let margin = 100; // Desired margin between the projects
     
         // Ensure all projects have absolute positioning
-        project.forEach((currentProject, index) => {
+            project.forEach((currentProject, index) => {
+                currentProject.style.position = 'absolute';
+                if (index > 0) {
+                    let previousProject = project[index - 1];
+                    // Position the current project based on the previous project plus the margin
+                    currentProject.style.left = (previousProject.offsetLeft + previousProject.offsetWidth + margin) + 'px';
+                } else {
+                    // Position the first project at the start
+                    currentProject.style.left = '0px';
+            }
+        });
+        }
+        else if (window.screen.orientation.type.includes('portrait')){
+            let margin = 100; // Desired margin between the projects
+    
+            // Ensure all projects have absolute positioning
+            project.forEach((currentProject, index) => {
             currentProject.style.position = 'absolute';
             if (index > 0) {
                 let previousProject = project[index - 1];
                 // Position the current project based on the previous project plus the margin
-                currentProject.style.left = (previousProject.offsetLeft + previousProject.offsetWidth + margin) + 'px';
+                currentProject.style.top = (previousProject.offsetTop + previousProject.offsetHeight + margin) + 'px';
             } else {
                 // Position the first project at the start
-                currentProject.style.left = '0px';
+                currentProject.style.top = '100px';
             }
         });
+        }
     }
     
 });
