@@ -224,3 +224,39 @@ body{
     z-index: 5 !important;
     pointer-events: all !important;
 }
+
+@media (orientation: portrait){
+    .ring{
+        height: 70vw;
+        width: 70vw;
+        border: solid 2.5vw rgba(255, 255, 255, 0.322);
+    }
+
+    .category{
+        height: 23vw;
+        width: 23vw;
+        font-size: 3vw;
+    }
+
+    .logo{
+        height: 35vw;
+        width: 35vw;
+    }
+
+    .project{
+        margin-left: 12.5vw;
+        width: 75vw;
+        height: 75vh;
+    }
+
+    .project_link{
+        width: 25vw;
+        height: 10vw;
+        font-size: 3vw;
+    }
+
+    #return{
+        top: 3vh;
+        right: 3vh;
+    }
+}
